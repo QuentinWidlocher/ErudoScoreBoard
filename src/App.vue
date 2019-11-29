@@ -11,10 +11,10 @@
         </a>
       </div>
     </nav>
-    <section class="container">
+    <section class="container is-mobile">
       <router-view></router-view>
     </section>
   </div>
 </template>
 <script lang="ts" src="./App.ts"></script>
-<style lang="scss" scoped src="./App.scss"></style>
+<style lang="scss" src="./App.scss"></style>

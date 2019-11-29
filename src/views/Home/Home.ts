@@ -11,4 +11,8 @@ export default class Home extends Vue {
         { label: "lignes dans un fichier", power: 600 },
         { label: "story points en une semaine", power: 25 },
     ]
+
+    private mounted() {
+        
+    }
 }
