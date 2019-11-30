@@ -1,6 +1,35 @@
 @import './theme.scss';
 @import 'bulma/bulma.sass';
 
+html, body, #app {
+    height: 100%;
+    overflow: hidden;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+nav.navbar {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#main {
+    grid-area: 2 / 1 / 3 / 2;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 section.container {
     margin-top: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+
+    height: 100%;
 }
