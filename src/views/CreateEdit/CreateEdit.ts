@@ -43,7 +43,17 @@ export default class CreateEdit extends Vue {
         });
     }
 
-    cancel() {
+    saveEdition() {
+        firebaseService.db.collection('scores').doc(this.score.id).update(Object.assign({}, this.score)).then(() => {
+            router.push({name: 'home'});
+        });
+    }
+
+    cancelEdition() {
         router.push({name: 'home'});
+    }
+
+    deleteScore() {
+        console.log('delete');
     }
 }
