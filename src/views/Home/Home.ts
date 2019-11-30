@@ -1,5 +1,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import { firebaseService } from "@/services/firebase";
+import router from '@/router/index';
 import Score from '@/models/Score';
 import Card from "@/components/Card/Card.vue";
 import toScore from '@/mappers/ScoreMapper';
@@ -22,9 +23,13 @@ export default class Home extends Vue {
         this.loading = true;
         firebaseService.db.collection('scores').get().then((scores: firebase.firestore.QuerySnapshot) => {
             scores.forEach(scoreDoc => {
-                this.scores.push(toScore(scoreDoc.data()));
+                this.scores.push(toScore(scoreDoc));
             });
             this.loading = false;
         });
+    }
+
+    private goToCardEdit(id: string) {
+        router.push({ name: 'edit', params: { scoreId: id, createOrEdit: 'edit' } })
     }
 }

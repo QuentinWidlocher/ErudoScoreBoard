@@ -7,7 +7,8 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: "/", name: "home", component: Home },
-  { path: "/score/:createOrEdit", name: "createEdit", component: CreateEdit, props: true },
+  { path: "/score/create", name: "create", component: CreateEdit },
+  { path: "/score/:scoreId/:createOrEdit", name: "edit", component: CreateEdit, props: true },
 ];
 
 const router = new VueRouter({

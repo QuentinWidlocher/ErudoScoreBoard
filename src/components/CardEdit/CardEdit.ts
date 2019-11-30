@@ -3,5 +3,5 @@ import Score from "@/models/Score";
 
 @Component
 export default class CreateEdit extends Vue {
-    @Prop() score!: Score;
+    @Prop({default: new Score()}) score!: Score;
 }

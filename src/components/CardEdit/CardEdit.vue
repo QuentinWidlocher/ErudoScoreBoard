@@ -1,12 +1,12 @@
 <template>
-    <article class="card">
+    <article class="card mb-3">
      <div class="card-content">
-      <div class="is-flex" style="align-items: flex-end">
+      <div class="is-flex mb-3" style="align-items: flex-end">
        <!-- Value Field -->
-       <div class="field">
+       <div class="field mb-0 mr-3">
         <label for="scoreValue" class="label">Value</label>
         <div class="control">
-         <input id="scoreValue" name="Score Value" type="number" class="input is-large is-primary has-font-secondary"/>
+         <input id="scoreValue" name="Score Value" v-model="score.value" type="number" class="input is-large is-primary has-font-secondary"/>
         </div>
        </div>
 
@@ -14,7 +14,7 @@
        <div class="field" style="width: 100%;">
         <label for="scoreName" class="label">Name</label>
         <div class="control is-expanded has-icons-left">
-         <input id="scoreName" name="Score Name" type="text" class="input" />
+         <input id="scoreName" name="Score Name" v-model="score.name" type="text" class="input" />
          <span class="icon is-left">
           <i data-feather="edit-3"></i>
          </span>
@@ -26,7 +26,7 @@
        <!-- Date Field -->
        <div class="control has-icons-left">
         <label for="scoreDate" class="label">Date</label>
-        <input id="scoreDate" name="Score Date" type="date" class="input" />
+        <input id="scoreDate" name="Score Date" v-model="score.date" type="date" class="input" />
         <span class="icon is-left">
          <i data-feather="calendar"></i>
         </span>
@@ -35,7 +35,7 @@
        <!-- Description Field -->
        <div class="control is-expanded has-icons-left">
         <label for="scoreDescription" class="label">Description</label>
-        <input id="scoreDescription" name="Score Description" type="text" class="input" />
+        <input id="scoreDescription" name="Score Description" v-model="score.description" type="text" class="input" />
         <span class="icon is-left">
          <i data-feather="info"></i>
         </span>

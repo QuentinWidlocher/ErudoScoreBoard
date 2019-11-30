@@ -2,7 +2,9 @@
   <div id="app">
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <h1 class="navbar-item is-size-4">Erudo Score Board</h1>
+        <h1 class="navbar-item is-size-4">
+          <router-link :to="{name:'home'}">Erudo Score Board</router-link>
+        </h1>
 
         <a role="button" class="navbar-burger" :class="{ 'is-active': menuActive }" @click="menuActive = !menuActive" aria-label="menu">
           <span aria-hidden="true"></span>

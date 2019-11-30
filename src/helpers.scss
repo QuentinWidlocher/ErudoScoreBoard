@@ -1,0 +1,24 @@
+$spacer: 1rem;
+$margin-sizes: ("0": 0, "1": $spacer*.25, "2":$spacer*.5, "3": $spacer*1, "4":$spacer*1.5, "5": $spacer*3, "auto": auto);
+
+@mixin margin-helpers {
+    @each $margin-name, $margin-multiplier in $margin-sizes {
+        .mt-#{$margin-name}, .my-#{$margin-name} {
+            margin-top: $margin-multiplier !important;
+        }
+
+        .mb-#{$margin-name}, .my-#{$margin-name} {
+            margin-bottom: $margin-multiplier !important;
+        }
+
+        .ml-#{$margin-name}, .mx-#{$margin-name} {
+            margin-left: $margin-multiplier !important;
+        }
+
+        .mr-#{$margin-name}, .mx-#{$margin-name} {
+            margin-right: $margin-multiplier !important;
+        }
+    }
+}
+
+@include margin-helpers()
