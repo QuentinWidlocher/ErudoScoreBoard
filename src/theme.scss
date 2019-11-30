@@ -1,4 +1,10 @@
 @import 'bulma/sass/utilities/initial-variables';
 @import 'bulma/sass/utilities/functions';
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700|Lexend+Deca&display=swap');
 
 $primary: #ff9800;
+$family-primary: 'Lato', Helvetica, Arial, sans-serif;
+
+.has-font-secondary {
+    font-family: 'Lexend Deca', 'Lato', Helvetica, Arial, sans-serif;
+}

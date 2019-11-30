@@ -8,5 +8,5 @@ import { date } from "@/filters/DateFilter";
     }
 })
 export default class Card extends Vue {
-    @Prop() score?: Score;
+    @Prop() score!: Score;
 }
