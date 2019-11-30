@@ -5,6 +5,9 @@
                 <Card :score="score"></Card>
             </div>
         </div>
+        <p v-for="(i,j) in Array(1000).keys()" :key="j">
+            prout {{i}} <br>
+        </p>
         <progress v-if="loading" class="progress is-small is-primary" max="100"></progress>
     </div>
 </template>
