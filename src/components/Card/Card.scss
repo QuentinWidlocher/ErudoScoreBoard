@@ -1,0 +1,14 @@
+h2 {
+    margin-bottom: 0;
+    margin-right: .7rem;
+}
+
+article.card {
+    cursor: pointer;
+
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05, 1.05);
+    }
+}
