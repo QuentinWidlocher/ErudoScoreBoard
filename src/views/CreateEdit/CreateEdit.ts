@@ -44,8 +44,15 @@ export default class CreateEdit extends Vue {
     }
 
     saveEdition() {
-        firebaseService.db.collection('scores').doc(this.score.id).update(Object.assign({}, this.score)).then(() => {
-            router.push({name: 'home'});
+        let savePromise: Promise<any>;
+        if (this.createOrEdit === 'edit') {
+            savePromise = firebaseService.db.collection('scores').doc(this.score.id).update(ScoreMapper.toDocument(this.score))
+        } else {
+            savePromise = firebaseService.db.collection('scores').add(ScoreMapper.toDocument(this.score));
+        }
+
+        savePromise.then(() => {
+            router.push({ name: 'home' });
         });
     }
 

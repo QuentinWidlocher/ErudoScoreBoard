@@ -27,7 +27,7 @@
        <div class="control has-icons-left">
         <label for="scoreDate" class="label">Date</label>
         <input id="scoreDate" name="Score Date" 
-            v-bind:value="score.date ? score.date.toISOString().split('T')[0] : new Date().toISOString().split('T')[0]" 
+            v-bind:value="score.date.toISOString().split('T')[0]" 
             v-on:input="score.date = new Date($event.target.value)" 
             type="date" class="input" />
         <span class="icon is-left">
