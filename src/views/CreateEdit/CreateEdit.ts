@@ -2,7 +2,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 import CardEdit from "@/components/CardEdit/CardEdit.vue";
 import router from "@/router/index";
 import Score from '@/models/Score';
-import toScore from "@/mappers/ScoreMapper";
+import ScoreMapper from "@/mappers/ScoreMapper";
 import { firebaseService } from "@/services/firebase";
 
 @Component({
@@ -36,7 +36,7 @@ export default class CreateEdit extends Vue {
     async loadScore(id: string): Promise<Score> {
         return firebaseService.db.collection('scores').doc(id).get().then((scoreDoc: firebase.firestore.DocumentSnapshot) => {
             if (scoreDoc.data() !== undefined) {
-                return toScore(scoreDoc);
+                return ScoreMapper.toScore(scoreDoc);
             } else {
                 return new Score();
             }
