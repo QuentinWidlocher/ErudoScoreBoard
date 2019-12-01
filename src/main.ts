@@ -12,4 +12,6 @@ new Vue({
   render: h => h(App)
 }).$mount("#app");
 
-feather.replace();
+setTimeout(() => {
+  feather.replace();
+}, 1000);

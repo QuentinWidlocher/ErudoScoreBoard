@@ -14,12 +14,16 @@
       </div>
       <div class="navbar-menu" :class="{ 'is-active': menuActive }">
         <div class="navbar-end">
+          <router-link :to="{name:'create'}" class="navbar-item">
+            <span class="icon mr-2" style="vertical-align:bottom;"><i data-feather="plus"></i></span>
+            Add a new High Score
+          </router-link>
         </div>
       </div>
     </nav>
     <div id="main">
       <section class="container is-mobile">
-        <router-view></router-view>
+        <router-view :key="$route.fullPath"></router-view>
       </section>
     </div>
   </div>
