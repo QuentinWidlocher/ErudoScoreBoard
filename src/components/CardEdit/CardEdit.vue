@@ -38,8 +38,15 @@
                 <!-- Date Field -->
                 <div class="control has-icons-left">
                     <label for="scoreDate" class="label">Date</label>
-                    <input id="scoreDate" name="Score Date" :value="score.date.toISOString().split('T')[0]"
-                        @input="score.date = new Date($event.target.value)" type="date" class="input" />
+                    <input 
+                        id="scoreDate" 
+                        name="Score Date" 
+                        :value="getDate()"
+                        @input="setDate($event.target.value)" 
+                        type="date" 
+                        class="input" 
+                        :class="{'is-danger': !score.isFieldValid('value')}"
+                    />
                     <span class="icon is-left">
                         <calendar-icon></calendar-icon>
                     </span>
@@ -52,9 +59,10 @@
                         id="scoreDescription" 
                         name="Score Description" 
                         v-model="score.description" 
-                        :class="{'is-danger': !score.isFieldValid('description')}"
                         type="text"
-                        class="input" />
+                        class="input" 
+                        :class="{'is-danger': !score.isFieldValid('description')}"
+                    />
                     <span class="icon is-left">
                         <info-icon></info-icon>
                     </span>
