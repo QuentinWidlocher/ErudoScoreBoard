@@ -13,15 +13,6 @@ export default class CardEdit extends Vue {
 
     constants: Constants = new Constants();
 
-    beforeMount() {
-        if (!this.score) {
-            this.score = new Score();
-        }
-
-        // Initialize the date to today 
-        this.score.date = new Date();
-    }
-
     getConstants(): Constants {
         return Constants;
     }

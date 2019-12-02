@@ -4,13 +4,13 @@ import router from "@/router/index";
 import Score from '@/models/Score';
 import ScoreMapper from "@/mappers/ScoreMapper";
 import { firebaseService } from "@/services/firebase";
-import { SaveIcon, XIcon, TrashIcon } from "vue-feather-icons";
+import { SaveIcon, XIcon, TrashIcon, AlertCircleIcon } from "vue-feather-icons";
 import Constants from '@/services/constants';
 
 @Component({
     components: {
         CardEdit,
-        SaveIcon, XIcon, TrashIcon,
+        SaveIcon, XIcon, TrashIcon, AlertCircleIcon,
     }
 })
 export default class CreateEdit extends Vue {
@@ -19,6 +19,7 @@ export default class CreateEdit extends Vue {
 
     score: Score = new Score();
     loading: boolean = true;
+    showDeleteModal: boolean = false;
     constants: Constants = new Constants();
 
     valid = {
@@ -39,6 +40,8 @@ export default class CreateEdit extends Vue {
         this.loading = true;
         if (this.createOrEdit === 'edit') {
             this.score = await this.loadScore(this.scoreId);
+        } else {
+            this.score = new Score();
         }
         this.loading = false;
     }
@@ -72,7 +75,7 @@ export default class CreateEdit extends Vue {
         router.push({name: 'home'});
     }
 
-    deleteScore() {
+    confirmDelete() {
         firebaseService.db.collection('scores').doc(this.score.id).delete().then(() => {
             router.push({ name: 'home' });
         });

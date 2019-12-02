@@ -7,6 +7,13 @@ export default class Score {
     description!: string;
     date!: Date;
 
+    constructor() {
+        this.name = '';
+        this.value = 0;
+        this.date = new Date();
+        this.description = '';
+    }
+
     public isFieldValid(fieldName: string): boolean {
         const fieldValue = (this as any)[fieldName];
 
@@ -20,7 +27,7 @@ export default class Score {
 
     public isObjectValid(): boolean {
         for (let fieldName in this) {
-            if (!this.isFieldValid(fieldName)) { return false }
+            if (!this.isFieldValid(fieldName)) return false;
         }
 
         return true;
