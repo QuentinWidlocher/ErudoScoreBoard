@@ -6,4 +6,13 @@ article.card {
     &:hover {
         transform: scale(1.05, 1.05);
     }
+
+    span.date {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+        opacity: .5;
+    }
 }

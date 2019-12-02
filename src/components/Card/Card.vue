@@ -5,7 +5,8 @@
                 <h2 class="has-text-primary is-size-1 has-font-secondary mb-0 mr-3" style="word-break: keep-all">{{ score.value }}</h2>
                 <h3 class="my-0" style="word-break: break-word">{{ score.name }}</h3>
             </div>
-            <p style="word-break: break-word"><em>{{ score.date | date }}</em> - {{ score.description }}</p>
+            <p style="word-break: break-word">{{ score.description }}</p>
+            <span class="date">{{ score.date | date }}</span>
         </div>
     </article>
 </template>

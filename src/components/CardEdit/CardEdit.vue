@@ -45,7 +45,6 @@
                         @input="setDate($event.target.value)" 
                         type="date" 
                         class="input" 
-                        :class="{'is-danger': !score.isFieldValid('value')}"
                     />
                     <span class="icon is-left">
                         <calendar-icon></calendar-icon>
