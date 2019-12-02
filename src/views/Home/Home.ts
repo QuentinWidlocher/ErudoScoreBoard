@@ -17,6 +17,16 @@ export default class Home extends Vue {
 
     private mounted() {
         this.loadScores();
+
+        firebaseService.db.collection('scores').onSnapshot((snapshot: firebase.firestore.QuerySnapshot) => {
+            let scores: Score[] = [];
+
+            snapshot.forEach((scoreDoc: any) => {
+                scores.push(ScoreMapper.toScore(scoreDoc));
+            });
+
+            this.scores = scores;
+        });
     }
 
     private loadScores() {
