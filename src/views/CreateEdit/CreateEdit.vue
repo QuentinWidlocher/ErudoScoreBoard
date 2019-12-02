@@ -4,7 +4,7 @@
    <div class="column is-7">
     <CardEdit :score="score"/>
     <div class="buttons is-right">
-        <button class="button is-danger mr-auto" @click="deleteScore()">
+        <button class="button is-danger mr-auto" v-if="createOrEdit === 'edit'" @click="deleteScore()">
             <span class="icon">
                 <trash-icon></trash-icon>
             </span>

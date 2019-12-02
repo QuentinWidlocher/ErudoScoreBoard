@@ -73,6 +73,8 @@ export default class CreateEdit extends Vue {
     }
 
     deleteScore() {
-        console.log('delete');
+        firebaseService.db.collection('scores').doc(this.score.id).delete().then(() => {
+            router.push({ name: 'home' });
+        });
     }
 }
