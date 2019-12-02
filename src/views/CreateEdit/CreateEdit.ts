@@ -4,10 +4,13 @@ import router from "@/router/index";
 import Score from '@/models/Score';
 import ScoreMapper from "@/mappers/ScoreMapper";
 import { firebaseService } from "@/services/firebase";
+import { SaveIcon, XIcon, TrashIcon } from "vue-feather-icons";
+import Constants from '@/services/constants';
 
 @Component({
     components: {
         CardEdit,
+        SaveIcon, XIcon, TrashIcon,
     }
 })
 export default class CreateEdit extends Vue {
@@ -16,6 +19,7 @@ export default class CreateEdit extends Vue {
 
     score: Score = new Score();
     loading: boolean = true;
+    constants: Constants = new Constants();
 
     valid = {
         value: false,
@@ -50,7 +54,7 @@ export default class CreateEdit extends Vue {
     }
 
     saveEdition() {
-        if (!this.inputsAreValid()) return;
+        if (!this.score.isObjectValid()) return;
 
         let savePromise: Promise<any>;
         if (this.createOrEdit === 'edit') {
@@ -70,9 +74,5 @@ export default class CreateEdit extends Vue {
 
     deleteScore() {
         console.log('delete');
-    }
-
-    inputsAreValid() {
-        return !!this.score.name && !!this.score.value;
     }
 }
