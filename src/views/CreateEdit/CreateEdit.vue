@@ -6,7 +6,7 @@
     <div class="buttons is-right">
         <button class="button is-danger mr-auto" @click="deleteScore()">Delete</button>
         <button class="button is-danger is-outlined" @click="cancelEdition()">Cancel</button>
-        <button class="button is-success" @click="saveEdition()">Save</button>
+        <button class="button is-success" :disabled="!inputsAreValid()" @click="saveEdition()">Save</button>
     </div>
    </div>
   </div>

@@ -17,6 +17,12 @@ export default class CreateEdit extends Vue {
     score: Score = new Score();
     loading: boolean = true;
 
+    valid = {
+        value: false,
+        name: true,
+    }
+
+
     mounted() {
         if (this.createOrEdit !== 'create' && this.createOrEdit !== 'edit') {
             router.go(-1);
@@ -44,6 +50,8 @@ export default class CreateEdit extends Vue {
     }
 
     saveEdition() {
+        if (!this.inputsAreValid()) return;
+
         let savePromise: Promise<any>;
         if (this.createOrEdit === 'edit') {
             savePromise = firebaseService.db.collection('scores').doc(this.score.id).update(ScoreMapper.toDocument(this.score))
@@ -62,5 +70,9 @@ export default class CreateEdit extends Vue {
 
     deleteScore() {
         console.log('delete');
+    }
+
+    inputsAreValid() {
+        return !!this.score.name && !!this.score.value;
     }
 }

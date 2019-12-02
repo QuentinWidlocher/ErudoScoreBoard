@@ -13,9 +13,9 @@
         </a>
       </div>
       <div class="navbar-menu" :class="{ 'is-active': menuActive }">
-        <div class="navbar-end">
+        <div class="navbar-end" @click="menuActive = false">
           <router-link :to="{name:'create'}" class="navbar-item">
-            <span class="icon mr-2" style="vertical-align:bottom;"><i data-feather="plus"></i></span>
+            <span class="icon mr-2" style="vertical-align:bottom;"><plus-icon></plus-icon></span>
             Add a new High Score
           </router-link>
         </div>
