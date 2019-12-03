@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/feather-icons": "^4.7.0",
     "bulma": "^0.8.0",
+    "bulma-slider": "^2.0.0",
     "core-js": "^3.4.3",
     "feather-icons": "^4.24.1",
     "firebase": "^7.5.0",

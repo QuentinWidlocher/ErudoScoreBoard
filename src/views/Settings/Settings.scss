@@ -1,0 +1,18 @@
+@import '@/theme.scss';
+
+input[type=range].is-primary {
+    &::-webkit-slider-runnable-track
+    {
+        background-color: $primary;
+    }
+    
+    &::-moz-range-track
+    {
+        background-color: $primary;
+    }
+    
+    &::-ms-track
+    {
+        background-color: $primary;
+    }
+}

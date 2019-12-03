@@ -1,0 +1,6 @@
+@import '@/theme.scss';
+@import 'bulma/bulma.sass';
+
+h1.navbar-item>a {
+    color: $primary-invert;
+}

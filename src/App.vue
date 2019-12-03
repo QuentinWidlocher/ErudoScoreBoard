@@ -1,26 +1,8 @@
 <template>
   <div id="app">
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <h1 class="navbar-item is-size-4">
-          <router-link :to="{name:'home'}">Erudo Score Board</router-link>
-        </h1>
-
-        <a role="button" class="navbar-burger" :class="{ 'is-active': menuActive }" @click="menuActive = !menuActive" aria-label="menu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="navbar-menu" :class="{ 'is-active': menuActive }">
-        <div class="navbar-end" @click="menuActive = false">
-          <router-link :to="{name:'create'}" class="navbar-item">
-            <span class="icon mr-2" style="vertical-align:bottom;"><plus-icon></plus-icon></span>
-            Add a new High Score
-          </router-link>
-        </div>
-      </div>
-    </nav>
+    <div id="navbar">
+      <Navbar></Navbar>
+    </div>
     <div id="main">
       <section class="container is-mobile">
         <router-view :key="$route.fullPath"></router-view>

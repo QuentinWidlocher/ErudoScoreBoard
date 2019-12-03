@@ -4,6 +4,7 @@ import router from '@/router/index';
 import Score from '@/models/Score';
 import Card from "@/components/Card/Card.vue";
 import ScoreMapper from '@/mappers/ScoreMapper';
+import { globalVariables } from "@/services/globalVariables";
 
 @Component({
     components: {
@@ -41,5 +42,9 @@ export default class Home extends Vue {
 
     private goToCardEdit(id: string) {
         router.push({ name: 'edit', params: { scoreId: id, createOrEdit: 'edit' } })
+    }
+
+    private getListFormatClass() {
+        return `is-${globalVariables.listFormat}-desktop`;
     }
 }

@@ -1,11 +1,9 @@
 import { Component, Vue } from "vue-property-decorator";
-import { PlusIcon } from "vue-feather-icons";
+import Navbar from "@/components/Navbar/Navbar.vue";
 
 @Component({
     components: {
-        PlusIcon
+        Navbar,
     }
 })
-export default class App extends Vue { 
-    menuActive = false;
-}
+export default class App extends Vue { }
