@@ -8,3 +8,11 @@ $family-primary: 'Lato', Helvetica, Arial, sans-serif;
 .has-font-secondary {
     font-family: 'Lexend Deca', 'Lato', Helvetica, Arial, sans-serif;
 }
+
+$tabs-link-active-border-bottom-color: $primary;
+$tabs-link-active-color: $primary;
+$tabs-toggle-link-active-background-color: $primary;
+$tabs-toggle-link-active-border-color: $primary;
+
+$navbar-tab-active-color: $primary;
+$navbar-item-hover-color: $primary;

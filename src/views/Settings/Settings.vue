@@ -1,11 +1,11 @@
 <template>
     <div id="settings">
-        <div class="tabs">
+        <div class="tabs is-medium">
             <ul>
                 <li :class="{'is-active':(currentTab === 'list-layout')}"><a>List Layout</a></li>
             </ul>
         </div>
-        <div id="settings-main" class="mx-1">
+        <div id="settings-main" class="mx-2">
             <div v-if="currentTab === 'list-layout'">
                 <div class="field mb-4">
                     <label for="listLayoutSlider" class="label">List layout size :</label>
@@ -13,11 +13,11 @@
                         v-model="listFormat" step="1" min="3" max="12" type="range">
                     <p class="help">Useless on mobile</p>
                 </div>
-                <div class="columns mx-1 is-multiline is-centered is-vcentered">
+                <transition-group name="flip-list" tag="div" class="columns mx-1 is-multiline is-centered is-vcentered">
                     <div class="column" :class="getListFormatClass()" v-for="i in Array(5).keys()" :key="i">
                         <Card :score="defaultScore"></Card>
                     </div>
-                </div>
+                </transition-group>
             </div>
         </div>
     </div>
